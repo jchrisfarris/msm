@@ -34,4 +34,9 @@ install_init
 enable_init
 update_msm
 setup_jargroup
+
+# Amazon Linux doesn't put /usr/local/bin in the default path
+ln -s /etc/init.d/msm /usr/bin || install_error "Failed to Symlink MSM to /usr/bin"
+
 install_complete
+
